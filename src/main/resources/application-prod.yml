@@ -6,13 +6,13 @@ spring:
     name: vocab-app
 
   datasource:
-    url: ${DATABASE_URL:jdbc:mysql://shinkansen.proxy.rlwy.net:36474/railway}
-    username: ${DATABASE_USERNAME:root}
-    password: ${DATABASE_PASSWORD:cgwfWmZOoitduGacWrSEmlkPSMUeVcEW}
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ${DATABASE_URL:jdbc:postgresql://ep-nameless-breeze-a1rzsdfn-pooler.ap-southeast-1.aws.neon.tech:5432/neondb?sslmode=require}
+    username: ${DATABASE_USERNAME:neondb_owner}
+    password: ${DATABASE_PASSWORD:npg_fIo7cLnOug1s}
+    driver-class-name: org.postgresql.Driver
 
   jpa:
-    database-platform: org.hibernate.dialect.MySQL8Dialect
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       ddl-auto: update
     show-sql: false

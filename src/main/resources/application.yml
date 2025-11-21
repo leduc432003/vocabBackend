@@ -6,13 +6,13 @@ spring:
     name: vocab-app
 
   datasource:
-    url: jdbc:mysql://shinkansen.proxy.rlwy.net:36474/railway
-    username: root
-    password: cgwfWmZOoitduGacWrSEmlkPSMUeVcEW
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:postgresql://ep-nameless-breeze-a1rzsdfn-pooler.ap-southeast-1.aws.neon.tech:5432/neondb?sslmode=require
+    username: neondb_owner
+    password: npg_fIo7cLnOug1s
+    driver-class-name: org.postgresql.Driver
 
   jpa:
-    database-platform: org.hibernate.dialect.MySQL8Dialect
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       ddl-auto: update
     show-sql: true
@@ -25,7 +25,8 @@ spring:
       allowed-origins:
         - http://localhost:3000
         - http://localhost:5173
-        - vocab-frontend-xi.vercel.app
+        - https://vocab-frontend-xi.vercel.app
+        - https://vocab-frontend-delta.vercel.app
       allowed-methods:
         - GET
         - POST
