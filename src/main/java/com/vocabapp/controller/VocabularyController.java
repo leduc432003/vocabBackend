@@ -139,6 +139,14 @@ public class VocabularyController {
         Vocabulary created = vocabularyService.createVocabulary(vocabulary, user);
         return ResponseEntity.status(HttpStatus.CREATED).body(created);
     }
+
+    @PostMapping("/batch")
+    public ResponseEntity<List<Vocabulary>> createVocabularies(
+            @Valid @RequestBody List<Vocabulary> vocabularies,
+            @AuthenticationPrincipal User user) {
+        List<Vocabulary> created = vocabularyService.createVocabularies(vocabularies, user);
+        return ResponseEntity.status(HttpStatus.CREATED).body(created);
+    }
     
     @PutMapping("/{id}")
     public ResponseEntity<Vocabulary> updateVocabulary(

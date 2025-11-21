@@ -96,6 +96,12 @@ public class VocabularyService {
         vocabulary.setUser(user);
         return vocabularyRepository.save(vocabulary);
     }
+
+    @Transactional
+    public List<Vocabulary> createVocabularies(List<Vocabulary> vocabularies, User user) {
+        vocabularies.forEach(v -> v.setUser(user));
+        return vocabularyRepository.saveAll(vocabularies);
+    }
     
     @Transactional
     public Vocabulary updateVocabulary(Long id, Vocabulary vocabularyDetails, User user) {

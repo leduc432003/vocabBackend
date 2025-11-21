@@ -1,15 +1,21 @@
 services:
   db:
-    image: mysql:8.0
+    image: postgres:15
     restart: always
     environment:
-      - MYSQL_DATABASE=vocabulary
-      - MYSQL_ROOT_PASSWORD=123456
+      - POSTGRES_DB=vocabulary
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=123456
     ports:
-      - '3307:3306'
+      - '5432:5432'
     volumes:
       - ./init:/docker-entrypoint-initdb.d
-      - db-data:/var/lib/mysql
+      - db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
 volumes:
   db-data:

@@ -6,9 +6,10 @@ spring:
     name: vocab-app
 
   datasource:
-    url: jdbc:postgresql://ep-nameless-breeze-a1rzsdfn-pooler.ap-southeast-1.aws.neon.tech:5432/neondb?sslmode=require
-    username: neondb_owner
-    password: npg_fIo7cLnOug1s
+    # Local PostgreSQL (Docker)
+    url: jdbc:postgresql://localhost:5432/vocabulary
+    username: postgres
+    password: 123456
     driver-class-name: org.postgresql.Driver
 
   jpa:

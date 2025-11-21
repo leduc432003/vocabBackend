@@ -20,9 +20,14 @@ public interface VocabularyProgressRepository extends JpaRepository<VocabularyPr
     
     Long countByCollectionIdAndLearned(Long collectionId, Boolean learned);
     
+    
     @Query("SELECT COUNT(vp) FROM VocabularyProgress vp WHERE vp.learned = true")
     Long countAllLearned();
     
     @Query("SELECT vp FROM VocabularyProgress vp WHERE vp.collection.id = :collectionId AND vp.learned = :learned")
     List<VocabularyProgress> findByCollectionIdAndLearned(@Param("collectionId") Long collectionId, @Param("learned") Boolean learned);
+    
+    @Query("SELECT vp FROM VocabularyProgress vp WHERE vp.collection.id = :collectionId AND vp.learningStatus = :status")
+    List<VocabularyProgress> findByCollectionIdAndLearningStatus(@Param("collectionId") Long collectionId, @Param("status") com.vocabapp.model.LearningStatus status);
 }
+

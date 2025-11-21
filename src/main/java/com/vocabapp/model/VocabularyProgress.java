@@ -33,6 +33,16 @@ public class VocabularyProgress {
     @Column(nullable = false)
     private Boolean learned = false;
     
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private LearningStatus learningStatus = LearningStatus.NOT_STARTED;
+    
+    @Column
+    private Boolean firstAttemptCorrect = false;  // Multiple choice test
+    
+    @Column
+    private Boolean secondAttemptCorrect = false; // Typing test
+    
     @Column
     private Integer reviewCount = 0;
     
