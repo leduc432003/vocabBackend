@@ -22,7 +22,8 @@ import java.util.Map;
 @CrossOrigin(origins = {
         "http://localhost:5173",
         "http://localhost:3000",
-        "https://vocab-frontend-xi.vercel.app"
+        "https://vocab-frontend-xi.vercel.app",
+        "vocab-frontend-delta.vercel.app"
 })
 public class AuthController {
     
