@@ -1,0 +1,16 @@
+services:
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      - MYSQL_DATABASE=vocabulary
+      - MYSQL_ROOT_PASSWORD=123456
+    ports:
+      - '3307:3306'
+    volumes:
+      - ./init:/docker-entrypoint-initdb.d
+      - db-data:/var/lib/mysql
+
+volumes:
+  db-data:
+    driver: local
