@@ -6,9 +6,9 @@ spring:
     name: vocab-app
 
   datasource:
-    url: jdbc:mysql://brthoxikklob4q66tfru-mysql.services.clever-cloud.com:3306/brthoxikklob4q66tfru
-    username: unvj3o4bkgdfg4re
-    password: DWDhQ7lLOsodzoWSDK8f
+    url: jdbc:mysql://shinkansen.proxy.rlwy.net:36474/railway
+    username: root
+    password: cgwfWmZOoitduGacWrSEmlkPSMUeVcEW
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
